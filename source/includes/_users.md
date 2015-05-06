@@ -108,3 +108,40 @@ from_address_line_1 | optional | |
 from_address_line_2 | optional | |
 from_town | optional | |
 from_county | optional | |
+
+
+## User sign in
+
+> Sample request
+
+```shell
+curl -X POST "http://example.com/api/v1/users/sign_in" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"email":"nhattan@gmail.com","password":"12345678"}'
+```
+
+> Sample response
+
+```json
+{
+  "data": {
+      "user": {
+          "email": "nhattan@gmail.com",
+          "accept_terms": true,
+          "authentication_token": "some_token"
+      }
+  }
+}
+```
+
+This endpoint sign in a user
+
+### HTTP Request
+
+`POST http://example.com/api/v1/users/sign_in`
+
+### Query Parameters
+
+Parameter | Required | Default | Description
+--------- | ------- | ------- | -----------
+wl | optional | | If wl is not passed it will automatically set to current white label
+email | required | |
+password | required | |
