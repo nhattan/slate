@@ -12,6 +12,7 @@ includes:
   - authentication
   - users
   - passwords
+  - checklists
   - errors
 
 search: true
