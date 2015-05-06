@@ -12,3 +12,6 @@ Error Code | Meaning
 604 | user_create_failed -- Can not create user
 605 | session_create_failed -- Can not sign user in
 606 | password_create_failed -- Can not create reset password token
+607 | wrong_reset_password_token -- Wrong reset password token
+608 | password_update_failed -- Can not update password
+609 | invalid_password -- Invalid or missing new password
