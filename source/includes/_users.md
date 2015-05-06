@@ -61,7 +61,7 @@ auth_token | required | | auth_token received when signing in user
 
 
 
-## User registration, general planner
+## User registration
 
 > Sample request
 
