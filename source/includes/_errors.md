@@ -11,3 +11,4 @@ Error Code | Meaning
 603 | wrong_authentication_token -- The authentication token is wrong
 604 | user_create_failed -- Can not create user
 605 | session_create_failed -- Can not sign user in
+606 | password_create_failed -- Can not create reset password token

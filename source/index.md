@@ -11,6 +11,7 @@ includes:
   - introduction
   - authentication
   - users
+  - passwords
   - errors
 
 search: true
