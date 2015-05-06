@@ -145,3 +145,34 @@ Parameter | Required | Default | Description
 wl | optional | | If wl is not passed it will automatically set to current white label
 email | required | |
 password | required | |
+
+
+## User sign out
+
+> Sample request
+
+```shell
+curl -X DELETE "http://example.com/api/v1/users/sign_out" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token":"some_token"}'
+```
+
+> Sample response
+
+```json
+{
+  "data": {}
+}
+```
+
+This endpoint sign out a user
+
+### HTTP Request
+
+`DELETE http://example.com/api/v1/users/sign_out`
+
+### Query Parameters
+
+Parameter | Required | Default | Description
+--------- | ------- | ------- | -----------
+wl | optional | | If wl is not passed it will automatically set to current white label
+email | required | |
+auth_token | required | |
