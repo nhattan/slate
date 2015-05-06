@@ -1,1 +1,564 @@
-My Page
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Firstcar API</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="javascripts/all.js" type="text/javascript"></script>
+
+      <script>
+        $(function() {
+          setupLanguages(["shell"]);
+        });
+      </script>
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://firstcar.co.uk'>Firstcar Website</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the Firstcar API!</p>
+
+          <h1 id="authentication">Authentication</h1>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre><code class="highlight shell"><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s1">'Content-Type: application/json'</span>
+  -H <span class="s1">'Api-Key: meowmeowmeow'</span>
+</code></pre>
+
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+</blockquote>
+
+<p>Firstcar uses API keys to allow access to the API.</p>
+
+<p>Firstcar expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code class="prettyprint">Api-Key: meowmeowmeow</code></p>
+
+<aside class="notice">
+You must replace `meowmeowmeow` with your personal API key.
+</aside>
+
+          <h1 id="users">Users</h1>
+
+<h2 id="get-user">Get user</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre><code class="highlight shell">curl -X GET <span class="s2">"http://example.com/api/v1/users"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nhattan@gmail.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-21T03:28:46.000Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-21T08:58:39.636Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"accept_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"opt_in_retention"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"opt_in_acquisition"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tan"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nguyen"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"white_label_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"auto_registered"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"standard_password"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"registration_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"optout"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"legacy_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"marketing_permissions_rev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"opt_out_retention"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"photo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves current user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/api/v1/users</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td>auth_token received when signing in user</td>
+</tr>
+</tbody></table>
+
+<h2 id="user-registration,-general-planner">User registration, general planner</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"http://example.com/api/v1/users"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email":"nhattan@gmail.com","password":"12345678","password_confirmation":"12345678","accept_terms":1,"opt_in_retention":1,"opt_in_acquisition":1,"title":"Mr","first_name":"Tan","last_name":"Nguyen","phone":"1693625484","move_date":"2014/05/06","from_postcode":"MK5 8FT","from_address_line_1":"address 1","from_address_line_2":"address 2","from_town":"Tran Phu","from_county":"Ba Dinh"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint create a user then signin it.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://example.com/api/v1/users</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>email</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>password_confirmation</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>accept_terms</td>
+<td>required</td>
+<td></td>
+<td>1 = accept terms</td>
+</tr>
+<tr>
+<td>opt_in_retention</td>
+<td>optional</td>
+<td></td>
+<td>1 = will endeavour to update companies that already have your contact information with your new home details</td>
+</tr>
+<tr>
+<td>opt_in_acquisition</td>
+<td>optional</td>
+<td></td>
+<td>1 = will keep you updated with news, advice, special offers and services related to my home move from selected third parties by email and otherforms of communication</td>
+</tr>
+<tr>
+<td>title</td>
+<td>optional</td>
+<td></td>
+<td>ex. Mr</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>move_date</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_postcode</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_address_line_1</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_address_line_2</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_town</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_county</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="user-sign-in">User sign in</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"http://example.com/api/v1/users/sign_in"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email":"nhattan@gmail.com","password":"12345678"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nhattan@gmail.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"accept_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint sign in a user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://example.com/api/v1/users/sign_in</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>email</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="user-sign-out">User sign out</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre><code class="highlight shell">curl -X DELETE <span class="s2">"http://example.com/api/v1/users/sign_out"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token":"some_token"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint sign out a user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://example.com/api/v1/users/sign_out</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>email</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+          <h1 id="passwords">Passwords</h1>
+
+<h2 id="forgot-password">Forgot password</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"http://example.com/api/v1/users/passwords"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email": "nhattan@gmail.com"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint create a reset password token then send an email with reset password link to user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://example.com/api/v1/users/passwords</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>email</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="reset-password">Reset password</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre><code class="highlight shell">curl -X POST <span class="s2">"http://example.com/api/v1/users/passwords/reset"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"reset_password_token": "some_token","new_password":"some_password"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint reset user password</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://example.com/api/v1/users/passwords/reset</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>reset_password_token</td>
+<td>required</td>
+<td></td>
+<td>get from <a href="#forgot-password">Forgot password</a></td>
+</tr>
+<tr>
+<td>new_password</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Firstcar API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>600</td>
+<td>unknown &ndash; server unknown error</td>
+</tr>
+<tr>
+<td>601</td>
+<td>record_not_found &ndash; The specified user could not be found</td>
+</tr>
+<tr>
+<td>602</td>
+<td>authenticate_failed &ndash; The api key is wrong</td>
+</tr>
+<tr>
+<td>603</td>
+<td>wrong_authentication_token &ndash; The authentication token is wrong</td>
+</tr>
+<tr>
+<td>604</td>
+<td>user_create_failed &ndash; Can not create user</td>
+</tr>
+<tr>
+<td>605</td>
+<td>session_create_failed &ndash; Can not sign user in</td>
+</tr>
+<tr>
+<td>606</td>
+<td>password_create_failed &ndash; Can not create reset password token</td>
+</tr>
+<tr>
+<td>607</td>
+<td>wrong_reset_password_token &ndash; Wrong reset password token</td>
+</tr>
+<tr>
+<td>608</td>
+<td>password_update_failed &ndash; Can not update password</td>
+</tr>
+<tr>
+<td>609</td>
+<td>invalid_password &ndash; Invalid or missing new password</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
