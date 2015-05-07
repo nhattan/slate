@@ -15,3 +15,4 @@ Error Code | Meaning
 607 | wrong_reset_password_token -- Wrong reset password token
 608 | password_update_failed -- Can not update password
 609 | invalid_password -- Invalid or missing new password
+610 | missing_checklist_id -- Missing checklist id 
