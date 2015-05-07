@@ -176,3 +176,99 @@ Parameter | Required | Default | Description
 wl | optional | | If wl is not passed it will automatically set to current white label
 email | required | |
 auth_token | required | |
+
+
+## Get custom fields
+
+> Sample request
+
+```shell
+curl -X GET "http://example.com/api/v1/users/custom_fields" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow'
+```
+
+> Sample response
+
+```json
+{
+  "data": {
+    "custom_fields": [
+      {
+        "name": "field_have_you_got_a_garden",
+        "label": "have_you_got_a_garden",
+        "input_type": "checkbox",
+        "required": true,
+        "options": []
+      },
+      {
+        "name": "field_alternative_name",
+        "label": "alternative_name",
+        "input_type": "input",
+        "required": false,
+        "options": []
+      },
+      {
+        "name": "field_number_of_children",
+        "label": "number_of_children",
+        "input_type": "radio",
+        "required": true,
+        "options": [
+          [
+            "Yes",
+            "yes"
+          ],
+          [
+            "no",
+            "no"
+          ]
+        ]
+      },
+      {
+        "name": "field_birthday",
+        "label": "birthday",
+        "input_type": "date",
+        "required": true,
+        "options": []
+      },
+      {
+        "name": "field_rate_us",
+        "label": "rate_us",
+        "input_type": "select",
+        "required": false,
+        "options": [
+            [
+              "Poor",
+              "poor"
+            ],
+            [
+              "Good",
+              "good"
+            ],
+            [
+              "Excellent",
+              "excellent"
+            ]
+        ]
+      },
+      {
+        "name": "field_comment",
+        "label": "comment",
+        "input_type": "textarea",
+        "required": false,
+        "options": []
+      }
+    ]
+  }
+}
+```
+
+This endpoint retrieves all user custom fields
+
+### HTTP Request
+
+`GET http://example.com/api/v1/users/custom_fields`
+
+### Query Parameters
+
+Parameter | Required | Default | Description
+--------- | ------- | ------- | -----------
+wl | optional | | If wl is not passed it will automatically set to current white label
