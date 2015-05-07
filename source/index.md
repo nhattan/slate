@@ -13,6 +13,7 @@ includes:
   - users
   - passwords
   - checklists
+  - stages
   - errors
 
 search: true
