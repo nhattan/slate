@@ -895,6 +895,70 @@ You must replace `meowmeowmeow` with your personal API key.
 </tr>
 </tbody></table>
 
+          <h1 id="tasks">Tasks</h1>
+
+<h2 id="get-task-details">Get task details</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/tasks"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document task (displayed)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">-15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document task DESCRIPTION"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"button_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document task LABEL"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieve details of a task</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/api/v1/tasks/:id</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>id</td>
+<td>required</td>
+<td></td>
+<td>Required into the URL</td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td>auth_token received when signing in user</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <p>The Firstcar API uses the following error codes:</p>
