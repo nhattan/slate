@@ -14,6 +14,7 @@ includes:
   - passwords
   - checklists
   - stages
+  - weeks
   - errors
 
 search: true
