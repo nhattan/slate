@@ -15,6 +15,7 @@ includes:
   - checklists
   - stages
   - weeks
+  - tasks
   - errors
 
 search: true
