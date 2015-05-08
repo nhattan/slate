@@ -18,7 +18,7 @@ curl -X GET "http://example.com/api/v1/tasks" -H 'Content-Type: application/json
       "type": "document",
       "name": "Document task (displayed)",
       "days": -15,
-      "description": "Document task DESCRIPTION,
+      "description": "Document task DESCRIPTION",
       "button_label": "Document task LABEL",
       "done": false
     }
