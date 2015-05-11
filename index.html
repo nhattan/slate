@@ -1253,6 +1253,61 @@ You must replace `meowmeowmeow` with your personal API key.
 </tr>
 </tbody></table>
 
+<h2 id="get-progress-info">Get progress info</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/progress"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"progress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"progress_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tasks_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tasks_done_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tasks_todo_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tasks_overdue_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days_left_to_move"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieve details of progress info</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/api/v1/progress</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td>auth_token received when signing in user</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <p>The Firstcar API uses the following error codes:</p>
