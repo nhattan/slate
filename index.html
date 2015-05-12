@@ -759,7 +759,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/passwords"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email": "nhattan@gmail.com"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/password"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email": "nhattan@gmail.com"}'</span>
 </code></pre>
 
 <blockquote>
@@ -774,7 +774,7 @@
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://example.com/api/v1/users/passwords</code></p>
+<p><code class="prettyprint">POST http://example.com/api/v1/users/password</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -805,7 +805,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/passwords/reset"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"reset_password_token": "some_token","new_password":"some_password"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/password/reset"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"reset_password_token": "some_token","new_password":"some_password"}'</span>
 </code></pre>
 
 <blockquote>
@@ -820,7 +820,7 @@
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://example.com/api/v1/users/passwords/reset</code></p>
+<p><code class="prettyprint">POST http://example.com/api/v1/users/password/reset</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
