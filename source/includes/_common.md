@@ -1,5 +1,44 @@
 # Common
 
+## Get progress
+
+> Sample request
+
+```shell
+curl -X GET "http://example.com/api/v1/progress" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+```
+
+> Sample response
+
+```json
+{
+  "data": {
+    "progress": {
+      "progress_percentage": 60,
+      "tasks_count": 5,
+      "tasks_done_count": 3,
+      "tasks_todo_count": 2,
+      "tasks_overdue_count": 5,
+      "days_left_to_move": 11
+    }
+  }
+}
+```
+This endpoint get progress info
+
+### HTTP Request
+
+`GET http://example.com/api/v1/progress`
+
+### Query Parameters
+
+Parameter | Required | Default | Description
+--------- | ------- | ------- | -----------
+wl | optional | | If wl is not passed it will automatically set to current white label
+auth_token | required | | auth_token received when signing in user
+
+
+
 ## Get addresses
 
 > Sample request
