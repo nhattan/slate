@@ -2,7 +2,6 @@
 
 The Firstcar API uses the following error codes:
 
-
 Error Code | Meaning
 ---------- | -------
 600 | unknown -- server unknown error
@@ -15,4 +14,6 @@ Error Code | Meaning
 607 | wrong_reset_password_token -- Wrong reset password token
 608 | password_update_failed -- Can not update password
 609 | invalid_password -- Invalid or missing new password
-610 | missing_checklist_id -- Missing checklist id 
+610 | missing_checklist_id -- Missing checklist id
+611 | user_update_failed -- Can not update user
+612 | missing_postcode -- Missing postcode

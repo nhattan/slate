@@ -9,12 +9,11 @@ toc_footers:
 
 includes:
   - introduction
-  - authentication
+  - common
   - users
   - passwords
   - checklists
   - stages
-  - weeks
   - tasks
   - errors
 
