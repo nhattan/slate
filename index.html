@@ -110,7 +110,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/addresses"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"postcode": "MK5 8FT"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/addresses"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"postcode": "MK5 8FT"}'</span>
 </code></pre>
 
 <blockquote>
@@ -180,7 +180,7 @@
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://example.com/api/v1/addresses</code></p>
+<p><code class="prettyprint">GET http://example.com/api/v1/addresses</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1395,56 +1395,28 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>401</td>
+<td>unauthorized &ndash; Wrong api key or authentication token or password</td>
+</tr>
+<tr>
+<td>404</td>
+<td>not_found &ndash; The specified resource could not be found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>internal_server_error &ndash; Unexpected condition was encountered</td>
+</tr>
+<tr>
 <td>600</td>
-<td>unknown &ndash; server unknown error</td>
+<td>missing_parameter &ndash; Missing required parameter</td>
 </tr>
 <tr>
 <td>601</td>
-<td>record_not_found &ndash; The specified user could not be found</td>
+<td>create_failed &ndash; Can not create resource</td>
 </tr>
 <tr>
 <td>602</td>
-<td>authenticate_failed &ndash; The api key is wrong</td>
-</tr>
-<tr>
-<td>603</td>
-<td>wrong_authentication_token &ndash; The authentication token is wrong</td>
-</tr>
-<tr>
-<td>604</td>
-<td>user_create_failed &ndash; Can not create user</td>
-</tr>
-<tr>
-<td>605</td>
-<td>session_create_failed &ndash; Can not sign user in</td>
-</tr>
-<tr>
-<td>606</td>
-<td>password_create_failed &ndash; Can not create reset password token</td>
-</tr>
-<tr>
-<td>607</td>
-<td>wrong_reset_password_token &ndash; Wrong reset password token</td>
-</tr>
-<tr>
-<td>608</td>
-<td>password_update_failed &ndash; Can not update password</td>
-</tr>
-<tr>
-<td>609</td>
-<td>invalid_password &ndash; Invalid or missing new password</td>
-</tr>
-<tr>
-<td>610</td>
-<td>missing_checklist_id &ndash; Missing checklist id</td>
-</tr>
-<tr>
-<td>611</td>
-<td>user_update_failed &ndash; Can not update user</td>
-</tr>
-<tr>
-<td>612</td>
-<td>missing_postcode &ndash; Missing postcode</td>
+<td>update_failed &ndash; Can not update the specified resource</td>
 </tr>
 </tbody></table>
 
