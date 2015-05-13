@@ -44,7 +44,7 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/addresses" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"postcode": "MK5 8FT"}'
+curl -X GET "http://example.com/api/v1/addresses" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"postcode": "MK5 8FT"}'
 ```
 
 > Sample response
@@ -114,7 +114,7 @@ This endpoint get the list of all the addresses for a postcode
 
 ### HTTP Request
 
-`POST http://example.com/api/v1/addresses`
+`GET http://example.com/api/v1/addresses`
 
 ### Query Parameters
 
