@@ -1384,6 +1384,69 @@
 </tr>
 </tbody></table>
 
+<h2 id="mark-a-task-as-done-or-todo">Mark a task as done or todo</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/task/1/update"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token", "type": "todo"}'</span>
+
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"house_move_task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document task (displayed)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">-15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document task DESCRIPTION\r\nBLAH BLAH BLAH"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"button_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Document task LABEL"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint mark a task as done or todo</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://example.com/api/v1/tasks/1/update</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td>auth_token received when signing in user</td>
+</tr>
+<tr>
+<td>type</td>
+<td>required</td>
+<td></td>
+<td>&ldquo;done&rdquo; or &ldquo;todo&rdquo;</td>
+</tr>
+</tbody></table>
+
           <h1 id="instructors">Instructors</h1>
 
 <h2 id="get-intructor">Get intructor</h2>
