@@ -1447,6 +1447,148 @@
 </tr>
 </tbody></table>
 
+<h2 id="create-document,-generic-planner">Create document, generic planner</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/task/1/document"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token", "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "324234234", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh", "provider_name": "Nhat Tan", "provider_postcode": "MK5 8FT", "provider_address_line_1": "provider address 1", "provider_address_line_2": "provider address 2", "provider_town": "provider town", "provider_county": "provider county"}'</span>
+
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Status: 200
+Content-type: application/pdf
+</code></pre>
+
+<p>This endpoint create a document for a document task, generic planner</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://example.com/api/v1/tasks/:id/document</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td>auth_token received when signing in user</td>
+</tr>
+<tr>
+<td>title</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>phone_1</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>move_date</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_postcode</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_address_line_1</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_address_line_2</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_town</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from_county</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>provider_name</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>provider_postcode</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>provider_address_line_1</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>provider_address_line_2</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>provider_town</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>provider_county</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
           <h1 id="instructors">Instructors</h1>
 
 <h2 id="get-intructor">Get intructor</h2>
