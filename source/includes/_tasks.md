@@ -138,7 +138,7 @@ curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json
             "type": "website",
             "name": "Removal quote task (displayed)",
             "days": -60,
-            "description": "Removal quote task DESCRIPTION\nBLAH BLAH BLAH",
+            "description": "Removal quote task DESCRIPTION",
             "button_label": "Removal quote task LABEL",
             "done": false,
             "overdue": false,
@@ -149,7 +149,7 @@ curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json
             "type": "website",
             "name": "Conveyancer quote task (displayed)",
             "days": -60,
-            "description": "Conveyancer quote task DESCRIPTION\nBLAH BLAH BLAH",
+            "description": "Conveyancer quote task DESCRIPTION",
             "button_label": "Conveyancer quote task LABEL",
             "done": false,
             "overdue": false,
@@ -169,7 +169,7 @@ curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json
             "type": "inform",
             "name": "Inform task (displayed)",
             "days": -45,
-            "description": "Inform task DESCRIPTION\nBLAH BLAH BLAH",
+            "description": "Inform task DESCRIPTION",
             "button_label": "Inform task LABEL",
             "done": false,
             "overdue": false,
@@ -215,7 +215,7 @@ curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json
             "type": "website",
             "name": "Website task (displayed)",
             "days": -30,
-            "description": "Website task DESCRIPTION\nBLAH BLAH BLAH",
+            "description": "Website task DESCRIPTION",
             "button_label": "Website task LABEL",
             "done": false,
             "overdue": false,
@@ -235,7 +235,7 @@ curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json
             "type": "document",
             "name": "Document task (displayed)",
             "days": -15,
-            "description": "Document task DESCRIPTION\nBLAH BLAH BLAH",
+            "description": "Document task DESCRIPTION",
             "button_label": "Document task LABEL",
             "done": false,
             "overdue": false
@@ -316,12 +316,12 @@ curl -X POST "http://example.com/api/v1/task/1/update" -H 'Content-Type: applica
 ```json
 {
   "data": {
-    "house_move_task": {
+    "task": {
       "id": 1,
       "type": "document",
       "name": "Document task (displayed)",
       "days": -15,
-      "description": "Document task DESCRIPTION\r\nBLAH BLAH BLAH",
+      "description": "Document task DESCRIPTION",
       "button_label": "Document task LABEL",
       "done": false
     }
@@ -333,7 +333,7 @@ This endpoint mark a task as done or todo
 
 ### HTTP Request
 
-`POST http://example.com/api/v1/tasks/1/update`
+`POST http://example.com/api/v1/tasks/:id/update`
 
 ### Query Parameters
 
