@@ -311,6 +311,7 @@ auth_token | required | | auth_token received when signing in user
 curl -X POST "http://example.com/api/v1/task/1/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token", "type": "todo"}'
 
 ```
+
 > Sample response
 
 ```json
@@ -342,3 +343,50 @@ Parameter | Required | Default | Description
 wl | optional | | If wl is not passed it will automatically set to current white label
 auth_token | required | | auth_token received when signing in user
 type | required | | "done" or "todo"
+
+
+
+## Create document, generic planner
+
+> Sample request
+
+```shell
+curl -X POST "http://example.com/api/v1/task/1/document" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token", "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "324234234", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh", "provider_name": "Nhat Tan", "provider_postcode": "MK5 8FT", "provider_address_line_1": "provider address 1", "provider_address_line_2": "provider address 2", "provider_town": "provider town", "provider_county": "provider county"}'
+
+```
+
+> Sample response
+
+```
+Status: 200
+Content-type: application/pdf
+```
+
+This endpoint create a document for a document task, generic planner
+
+### HTTP Request
+
+`POST http://example.com/api/v1/tasks/:id/document`
+
+### Query Parameters
+
+Parameter | Required | Default | Description
+--------- | ------- | ------- | -----------
+wl | optional | | If wl is not passed it will automatically set to current white label
+auth_token | required | | auth_token received when signing in user
+title | optional | |
+first_name | optional | |
+last_name | optional | |
+phone_1 | optional | |
+move_date | optional | |
+from_postcode | optional | |
+from_address_line_1 | optional | |
+from_address_line_2 | optional | |
+from_town | optional | |
+from_county | optional | |
+provider_name | optional | |
+provider_postcode | optional | |
+provider_address_line_1 | optional | |
+provider_address_line_2 | optional | |
+provider_town | optional | |
+provider_county | optional | |
