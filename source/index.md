@@ -15,6 +15,7 @@ includes:
   - checklists
   - stages
   - tasks
+  - instructors
   - errors
 
 search: true
