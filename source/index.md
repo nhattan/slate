@@ -16,6 +16,7 @@ includes:
   - stages
   - tasks
   - instructors
+  - car_types
   - errors
 
 search: true
