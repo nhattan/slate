@@ -12,22 +12,21 @@ curl -X GET "http://example.com/api/v1/checklists" -H 'Content-Type: application
 
 ```json
 {
-  "data": {
-    "checklists": [
-      {
-        "id": 1,
-        "white_label_id": 1,
-        "name": "Check list",
-        "display_name": "Check list for a student",
-        "created_at": "2015-05-05T03:51:42.000Z",
-        "updated_at": "2015-05-05T03:51:42.000Z",
-        "all_countries": true
-      }
-    ]
-  }
+  "success": 200,
+  "data": [
+    {
+      "id": 1,
+      "white_label_id": 1,
+      "name": "Check list",
+      "display_name": "Check list for a student",
+      "created_at": "2015-05-04T15:25:31.000Z",
+      "updated_at": "2015-05-04T15:25:31.000Z",
+      "all_countries": true
+    }
+  ]
 }
 ```
-This endpoint retrieve all available checklists
+This endpoint gets all available checklists
 
 ### HTTP Request
 

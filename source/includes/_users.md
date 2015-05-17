@@ -12,41 +12,40 @@ curl -X GET "http://example.com/api/v1/users" -H 'Content-Type: application/json
 
 ```json
 {
+  "success": 200,
   "data": {
-      "user": {
-          "id": 1,
-          "email": "nhattan@gmail.com",
-          "created_at": "2015-04-21T03:28:46.000Z",
-          "updated_at": "2015-04-21T08:58:39.636Z",
-          "accept_terms": true,
-          "opt_in_retention": true,
-          "opt_in_acquisition": true,
-          "title": "Mr",
-          "first_name": "Tan",
-          "last_name": "Nguyen",
-          "phone_1": null,
-          "phone_2": null,
-          "white_label_id": 1,
-          "authentication_token": "some_token",
-          "auto_registered": null,
-          "standard_password": null,
-          "registration_token": null,
-          "optout": null,
-          "legacy_id": null,
-          "marketing_permissions_rev": null,
-          "opt_out_retention": false,
-          "photo": {
-              "url": null,
-              "thumb": {
-                  "url": null
-              }
-          }
+    "id": 1,
+    "email": "nhattan@gmail.com",
+    "created_at": "2015-04-21T03:28:46.000Z",
+    "updated_at": "2015-04-21T08:58:39.636Z",
+    "accept_terms": true,
+    "opt_in_retention": true,
+    "opt_in_acquisition": true,
+    "title": "Mr",
+    "first_name": "Tan",
+    "last_name": "Nguyen",
+    "phone_1": null,
+    "phone_2": null,
+    "white_label_id": 1,
+    "authentication_token": "some_token",
+    "auto_registered": null,
+    "standard_password": null,
+    "registration_token": null,
+    "optout": null,
+    "legacy_id": null,
+    "marketing_permissions_rev": null,
+    "opt_out_retention": false,
+    "photo": {
+      "url": null,
+      "thumb": {
+        "url": null
       }
+    }
   }
 }
 ```
 
-This endpoint retrieves current user.
+This endpoint gets current user
 
 ### HTTP Request
 
@@ -66,22 +65,23 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/users" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"email":"nhattan@gmail.com","password":"12345678","password_confirmation":"12345678","accept_terms":1,"opt_in_retention":1,"opt_in_acquisition":1,"title":"Mr","first_name":"Tan","last_name":"Nguyen","phone_1":"1693625484","move_date":"2014/05/06","from_postcode":"MK5 8FT","from_address_line_1":"address 1","from_address_line_2":"address 2","from_town":"Tran Phu","from_county":"Ba Dinh"}'
+curl -X POST "http://example.com/api/v1/users" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1,"title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh"}'
 ```
 
 > Sample response
 
 ```json
 {
+  "success": 200,
   "data": {
-      "user": {
-        "authentication_token": "some_token"
-      }
+    "email": "nhattan@gmail.com",
+    "accept_terms": true,
+    "authentication_token": "some_token"
   }
 }
 ```
 
-This endpoint create a user then signin it.
+This endpoint creates a user then sign user in
 
 ### HTTP Request
 
@@ -116,48 +116,47 @@ from_county | optional | |
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/users/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token":"some_token",email":"nhattan@gmail.com","password":"12345678","password_confirmation":"12345678","accept_terms":1,"opt_in_retention":1,"opt_in_acquisition":1,"title":"Mr","first_name":"Tan","last_name":"Nguyen","phone_1":"1693625484","move_date":"2014/05/06","from_postcode":"MK5 8FT","from_address_line_1":"address 1","from_address_line_2":"address 2","from_town":"Tran Phu","from_county":"Ba Dinh"}'
+curl -X POST "http://example.com/api/v1/users/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token", email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": Tran Phu", "from_county": "Ba Dinh"}'
 ```
 
 > Sample response
 
 ```json
 {
+  "success": 200,
   "data": {
-    "user": {
-      "id": 35,
-      "email": "nhattan@gmail.com",
-      "created_at": "2015-05-11T04:01:00.000Z",
-      "updated_at": "2015-05-11T06:36:28.608Z",
-      "accept_terms": true,
-      "opt_in_retention": true,
-      "opt_in_acquisition": true,
-      "title": "Mr",
-      "first_name": "Tan",
-      "last_name": "Nguyen",
-      "phone_1": "1693625484",
-      "phone_2": null,
-      "white_label_id": 1,
-      "authentication_token": "some_token",
-      "auto_registered": null,
-      "standard_password": null,
-      "registration_token": null,
-      "optout": null,
-      "legacy_id": null,
-      "marketing_permissions_rev": null,
-      "opt_out_retention": false,
-      "photo": {
-        "url": null,
-        "thumb": {
-          "url": null
-        }
+    "id": 35,
+    "email": "nhattan@gmail.com",
+    "created_at": "2015-05-11T04:01:00.000Z",
+    "updated_at": "2015-05-11T06:36:28.608Z",
+    "accept_terms": true,
+    "opt_in_retention": true,
+    "opt_in_acquisition": true,
+    "title": "Mr",
+    "first_name": "Tan",
+    "last_name": "Nguyen",
+    "phone_1": "1693625484",
+    "phone_2": null,
+    "white_label_id": 1,
+    "authentication_token": "some_token",
+    "auto_registered": null,
+    "standard_password": null,
+    "registration_token": null,
+    "optout": null,
+    "legacy_id": null,
+    "marketing_permissions_rev": null,
+    "opt_out_retention": false,
+    "photo": {
+      "url": null,
+      "thumb": {
+        "url": null
       }
     }
   }
 }
 ```
 
-This endpoint update a user.
+This endpoint updates a user
 
 ### HTTP Request
 
@@ -199,17 +198,16 @@ curl -X POST "http://example.com/api/v1/users/sign_in" -H 'Content-Type: applica
 
 ```json
 {
+  "success": 200,
   "data": {
-      "user": {
-          "email": "nhattan@gmail.com",
-          "accept_terms": true,
-          "authentication_token": "some_token"
-      }
+    "email": "nhattan11@gmail.com",
+    "accept_terms": true,
+    "authentication_token": "some_token"
   }
 }
 ```
 
-This endpoint sign in a user
+This endpoint signs in a user
 
 ### HTTP Request
 
@@ -224,23 +222,25 @@ email | required | |
 password | required | |
 
 
+
 ## User sign out
 
 > Sample request
 
 ```shell
-curl -X DELETE "http://example.com/api/v1/users/sign_out" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token":"some_token"}'
+curl -X DELETE "http://example.com/api/v1/users/sign_out" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
 ```
 
 > Sample response
 
 ```json
 {
+  "success": 200,
   "data": {}
 }
 ```
 
-This endpoint sign out a user
+This endpoint signs out a user
 
 ### HTTP Request
 
@@ -252,7 +252,8 @@ Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
 wl | optional | | If wl is not passed it will automatically set to current white label
 email | required | |
-auth_token | required | |
+auth_token | required | | auth_token received when signing in user
+
 
 
 ## Get custom fields
@@ -267,78 +268,77 @@ curl -X GET "http://example.com/api/v1/users/custom_fields" -H 'Content-Type: ap
 
 ```json
 {
-  "data": {
-    "custom_fields": [
-      {
-        "name": "field_have_you_got_a_garden",
-        "label": "have_you_got_a_garden",
-        "input_type": "checkbox",
-        "required": true,
-        "options": []
-      },
-      {
-        "name": "field_alternative_name",
-        "label": "alternative_name",
-        "input_type": "input",
-        "required": false,
-        "options": []
-      },
-      {
-        "name": "field_number_of_children",
-        "label": "number_of_children",
-        "input_type": "radio",
-        "required": true,
-        "options": [
-          [
-            "Yes",
-            "yes"
-          ],
-          [
-            "no",
-            "no"
-          ]
+  "success": 200,
+  "data": [
+    {
+      "name": "field_have_you_got_a_garden",
+      "label": "have_you_got_a_garden",
+      "input_type": "checkbox",
+      "required": true,
+      "options": []
+    },
+    {
+      "name": "field_alternative_name",
+      "label": "alternative_name",
+      "input_type": "input",
+      "required": false,
+      "options": []
+    },
+    {
+      "name": "field_number_of_children",
+      "label": "number_of_children",
+      "input_type": "radio",
+      "required": true,
+      "options": [
+        [
+          "Yes",
+          "yes"
+        ],
+        [
+          "no",
+          "no"
         ]
-      },
-      {
-        "name": "field_birthday",
-        "label": "birthday",
-        "input_type": "date",
-        "required": true,
-        "options": []
-      },
-      {
-        "name": "field_rate_us",
-        "label": "rate_us",
-        "input_type": "select",
-        "required": false,
-        "options": [
-            [
-              "Poor",
-              "poor"
-            ],
-            [
-              "Good",
-              "good"
-            ],
-            [
-              "Excellent",
-              "excellent"
-            ]
+      ]
+    },
+    {
+      "name": "field_birthday",
+      "label": "birthday",
+      "input_type": "date",
+      "required": true,
+      "options": []
+    },
+    {
+      "name": "field_rate_us",
+      "label": "rate_us",
+      "input_type": "select",
+      "required": false,
+      "options": [
+        [
+          "Poor",
+          "poor"
+        ],
+        [
+          "Good",
+          "good"
+        ],
+        [
+          "Excellent",
+          "excellent"
         ]
-      },
-      {
-        "name": "field_comment",
-        "label": "comment",
-        "input_type": "textarea",
-        "required": false,
-        "options": []
-      }
-    ]
-  }
+      ]
+    },
+    {
+      "name": "field_comment",
+      "label": "comment",
+      "input_type": "textarea",
+      "required": false,
+      "options": []
+    }
+  ]
 }
 ```
 
-This endpoint retrieves all user custom fields
+This endpoint gets all user custom fields
 
 ### HTTP Request
 

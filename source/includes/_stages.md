@@ -5,35 +5,34 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/stages" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"checklist_id":1}'
+curl -X GET "http://example.com/api/v1/stages" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"checklist_id": 1}'
 ```
 
 > Sample response
 
 ```json
 {
-  "data": {
-    "stages": [
-      {
-        "id": 1,
-        "number": 1,
-        "name": "First stage"
-      },
-      {
-        "id": 2,
-        "number": 2,
-        "name": "Second stage"
-      },
-      {
-        "id": 3,
-        "number": 3,
-        "name": "Last stage"
-      }
-    ]
-  }
+  "status": 200,
+  "data": [
+    {
+      "id": 1,
+      "number": 1,
+      "name": "First stage"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "name": "Second stage"
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "name": "Last stage"
+    }
+  ]
 }
 ```
-This endpoint retrieve all available stages for a checklist
+This endpoint gets all available stages for a checklist
 
 ### HTTP Request
 

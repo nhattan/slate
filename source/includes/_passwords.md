@@ -12,11 +12,12 @@ curl -X POST "http://example.com/api/v1/users/password" -H 'Content-Type: applic
 
 ```json
 {
+  "success": 200,
   "data": {}
 }
 ```
 
-This endpoint create a reset password token then send an email with reset password link to user
+This endpoint creates a reset password token then send an email with reset password link to user
 
 ### HTTP Request
 
@@ -35,18 +36,19 @@ email | required | |
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/users/password/reset" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"reset_password_token": "some_token","new_password":"some_password"}'
+curl -X POST "http://example.com/api/v1/users/password/reset" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"reset_password_token": "some_token", "new_password": "some_password"}'
 ```
 
 > Sample response
 
 ```json
 {
+  "success": 200,
   "data": {}
 }
 ```
 
-This endpoint reset user password
+This endpoint resets user password
 
 ### HTTP Request
 
