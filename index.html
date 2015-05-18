@@ -1694,6 +1694,141 @@ Content-type: application/pdf
 </tr>
 </tbody></table>
 
+<h2 id="search-intructors">Search intructors</h2>
+
+<blockquote>
+<p>Sample request</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/instructors/search"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token", "postcode": "MK5-8FT", car_type:"Manual", page: "1"}'</span>
+</code></pre>
+
+<blockquote>
+<p>Sample response</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"table"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alan-melton1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alan"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melton"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"driving_school_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atomdrivingschool@btinternet.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gearboxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Manual"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"testimonials_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Drive iQ Pro"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"dsa_grade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leighton Buzzard, United Kingdom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">51.919684</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.660657</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"best_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">2100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"best_one_hour_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">2200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We are a no nonsense driving school and will have you on the road asap. Very flexible with times as we understand people lead a busy lifestyle these days. \r\nFirst lesson is £11 this is for you to see if your comfortable with the instructor and wish to carry on. \r\nAll services provided with pass plus motorway driving etc. \r\nCar is renewed every 18 months and is air conditioned.\r\nLessons can be as long or as short as you desire with prices to match length of the lesson you choose. \r\nText, email or simply phone to book your lesson now!"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/assets/fallback/avatar/default-a3fa46ca7933dd2767c4b22d4c5034e9.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"standard"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/assets/fallback/avatar/standard_default-3520b3d59ecb0207c53df02ff132805a.jpg"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/assets/fallback/avatar/thumb_default-c2e90a06644af95aa4c2e3f8a35d2490.jpg"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"table"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"victor-fountain"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victor"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fountain"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"driving_school_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA Driving School"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gearboxes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Manual"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"testimonials_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"qualifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Drive iQ Pro"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"RoSPA - Royal Society for the Prevention of Accidents"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"dsa_grade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Newport Pagnell, Buckinghamshire"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.087462</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.750777</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"best_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">2300</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"best_one_hour_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">2300</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/assets/fallback/avatar/default-a3fa46ca7933dd2767c4b22d4c5034e9.jpg"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"standard"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/assets/fallback/avatar/standard_default-3520b3d59ecb0207c53df02ff132805a.jpg"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/assets/fallback/avatar/thumb_default-c2e90a06644af95aa4c2e3f8a35d2490.jpg"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint searches instructors</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/api/v1/instructors/search</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>wl</td>
+<td>optional</td>
+<td></td>
+<td>If wl is not passed it will automatically set to current white label</td>
+</tr>
+<tr>
+<td>auth_token</td>
+<td>required</td>
+<td></td>
+<td>auth_token received when signing in user</td>
+</tr>
+<tr>
+<td>postcode</td>
+<td>required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>car_type</td>
+<td>optional</td>
+<td></td>
+<td>&ldquo;Manual&rdquo; or &ldquo;Automatic&rdquo;</td>
+</tr>
+<tr>
+<td>page</td>
+<td>optional</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
           <h1 id="car-types">Car types</h1>
 
 <h2 id="get-car-types">Get car types</h2>
