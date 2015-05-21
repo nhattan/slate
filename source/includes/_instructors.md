@@ -5,7 +5,7 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/instructors/tran-thanh"-H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow'
+curl -X GET "http://example.com/api/v1/instructors/tran-thanh"-H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -130,7 +130,7 @@ This endpoint gets details of a instructor
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 
 
 

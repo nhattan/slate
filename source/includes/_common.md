@@ -5,7 +5,7 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/progress" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+curl -X GET "http://example.com/api/v1/progress" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -33,8 +33,7 @@ This endpoint get progress info
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 
 
 
@@ -43,7 +42,7 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/addresses" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"postcode": "MK5 8FT"}'
+curl -X GET "http://example.com/api/v1/addresses" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"postcode": "MK5 8FT"}'
 ```
 
 > Sample response
@@ -118,5 +117,5 @@ This endpoint gets the list of all the addresses for a postcode
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 postcode | required | |

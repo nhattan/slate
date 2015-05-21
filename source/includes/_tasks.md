@@ -5,7 +5,7 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/tasks" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+curl -X GET "http://example.com/api/v1/tasks" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -106,8 +106,7 @@ This endpoint gets all tasks with status information
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 
 
 
@@ -116,7 +115,7 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+curl -X GET "http://example.com/api/v1/weeks" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -227,8 +226,7 @@ This endpoint gets list of tasks by weeks
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 
 
 
@@ -237,7 +235,7 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/tasks/1" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+curl -X GET "http://example.com/api/v1/tasks/1" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -266,8 +264,7 @@ This endpoint gets details of a task
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 
 
 
@@ -276,7 +273,7 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/task/1/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token", "type": "todo"}'
+curl -X POST "http://example.com/api/v1/task/1/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"type": "todo"}'
 
 ```
 
@@ -307,8 +304,7 @@ This endpoint marks a task as done or todo
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 type | required | | "done" or "todo"
 
 
@@ -318,7 +314,7 @@ type | required | | "done" or "todo"
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/task/1/document" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token", "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "324234234", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh", "provider_name": "Nhat Tan", "provider_postcode": "MK5 8FT", "provider_address_line_1": "provider address 1", "provider_address_line_2": "provider address 2", "provider_town": "provider town", "provider_county": "provider county"}'
+curl -X POST "http://example.com/api/v1/task/1/document" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"title": "Mr", "first_name": "David", "last_name": "Black", "phone_1": "324234234", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "my town", "from_county": "my county", "provider_name": "Provider 1", "provider_postcode": "MK5 8FT", "provider_address_line_1": "provider address 1", "provider_address_line_2": "provider address 2", "provider_town": "provider town", "provider_county": "provider county"}'
 
 ```
 
@@ -339,8 +335,7 @@ This endpoint creates a document for a document task, generic planner
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 title | optional | |
 first_name | optional | |
 last_name | optional | |

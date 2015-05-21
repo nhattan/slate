@@ -5,7 +5,7 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/car_types" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow'
+curl -X GET "http://example.com/api/v1/car_types" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -41,5 +41,4 @@ This endpoint gets all types of car
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
