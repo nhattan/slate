@@ -5,7 +5,7 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/users" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+curl -X GET "http://example.com/api/v1/users" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -14,33 +14,20 @@ curl -X GET "http://example.com/api/v1/users" -H 'Content-Type: application/json
 {
   "success": 200,
   "data": {
-    "id": 1,
-    "email": "nhattan@gmail.com",
-    "created_at": "2015-04-21T03:28:46.000Z",
-    "updated_at": "2015-04-21T08:58:39.636Z",
-    "accept_terms": true,
-    "opt_in_retention": true,
-    "opt_in_acquisition": true,
     "title": "Mr",
-    "first_name": "Tan",
-    "last_name": "Nguyen",
-    "phone_1": null,
-    "phone_2": null,
-    "white_label_id": 1,
-    "authentication_token": "some_token",
-    "auto_registered": null,
-    "standard_password": null,
-    "registration_token": null,
-    "optout": null,
-    "legacy_id": null,
-    "marketing_permissions_rev": null,
-    "opt_out_retention": false,
-    "photo": {
-      "url": null,
-      "thumb": {
-        "url": null
-      }
-    }
+    "first_name": "David",
+    "phone_1": "01693625484",
+    "from_postcode": "MK5 8FT",
+    "from_address_line_1": "address 1",
+    "from_address_line_2": "address 2",
+    "from_town": "my town",
+    "from_county": "my county",
+    "move_date": "2014-05-06",
+    "field_have_you_got_a_garden": false,
+    "field_alternative_name": "David Black",
+    "field_birthdate": "1992-05-30",
+    "field_rate_us": 2,
+    "field_are_you_sure": "no"
   }
 }
 ```
@@ -55,8 +42,7 @@ This endpoint gets current user
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
-auth_token | required | | auth_token received when signing in user
+wl | optional | firstcar | White label
 
 
 
@@ -65,7 +51,8 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/users" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1,"title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh"}'
+curl -X POST "http://example.com/api/v1/users" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"email": "davidblack@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "David", "last_name": "Black", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "my town", "from_county": "my county", "field_have_you_got_a_garden": false, "field_alternative_name": "David", "field_birthdate": "1992-05-30", "field_rate_us": 2,
+"field_are_you_sure": "no"}'
 ```
 
 > Sample response
@@ -74,7 +61,7 @@ curl -X POST "http://example.com/api/v1/users" -H 'Content-Type: application/jso
 {
   "success": 200,
   "data": {
-    "email": "nhattan@gmail.com",
+    "email": "davidblack@gmail.com",
     "accept_terms": true,
     "authentication_token": "some_token"
   }
@@ -91,7 +78,7 @@ This endpoint creates a user then sign user in
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 email | required | |
 password | required | |
 password_confirmation | required | |
@@ -108,6 +95,11 @@ from_address_line_1 | optional | |
 from_address_line_2 | optional | |
 from_town | optional | |
 from_county | optional | |
+field_have_you_got_a_garden | optional | | custom field
+field_alternative_name | optional | | custom field
+field_birthdate | optional | | custom field
+field_rate_us | optional | | custom field
+field_are_you_sure | optional | | custom field
 
 
 
@@ -116,7 +108,7 @@ from_county | optional | |
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/users/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token", email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": Tran Phu", "from_county": "Ba Dinh"}'
+curl -X POST "http://example.com/api/v1/users/update" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "my town", "from_county": "my county"}'
 ```
 
 > Sample response
@@ -125,33 +117,20 @@ curl -X POST "http://example.com/api/v1/users/update" -H 'Content-Type: applicat
 {
   "success": 200,
   "data": {
-    "id": 35,
-    "email": "nhattan@gmail.com",
-    "created_at": "2015-05-11T04:01:00.000Z",
-    "updated_at": "2015-05-11T06:36:28.608Z",
-    "accept_terms": true,
-    "opt_in_retention": true,
-    "opt_in_acquisition": true,
     "title": "Mr",
-    "first_name": "Tan",
-    "last_name": "Nguyen",
-    "phone_1": "1693625484",
-    "phone_2": null,
-    "white_label_id": 1,
-    "authentication_token": "some_token",
-    "auto_registered": null,
-    "standard_password": null,
-    "registration_token": null,
-    "optout": null,
-    "legacy_id": null,
-    "marketing_permissions_rev": null,
-    "opt_out_retention": false,
-    "photo": {
-      "url": null,
-      "thumb": {
-        "url": null
-      }
-    }
+    "first_name": "David",
+    "phone_1": "01693625484",
+    "from_postcode": "MK5 8FT",
+    "from_address_line_1": "address 1",
+    "from_address_line_2": "address 2",
+    "from_town": "my town",
+    "from_county": "my county",
+    "move_date": "2014-05-06",
+    "field_have_you_got_a_garden": false,
+    "field_alternative_name": "David Black",
+    "field_birthdate": "1992-05-30",
+    "field_rate_us": 2,
+    "field_are_you_sure": "no"
   }
 }
 ```
@@ -166,7 +145,7 @@ This endpoint updates a user
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 email | required | |
 password | required | |
 password_confirmation | required | |
@@ -183,6 +162,11 @@ from_address_line_1 | optional | |
 from_address_line_2 | optional | |
 from_town | optional | |
 from_county | optional | |
+field_have_you_got_a_garden | optional | | custom field
+field_alternative_name | optional | | custom field
+field_birthdate | optional | | custom field
+field_rate_us | optional | | custom field
+field_are_you_sure | optional | | custom field
 
 
 
@@ -191,7 +175,7 @@ from_county | optional | |
 > Sample request
 
 ```shell
-curl -X POST "http://example.com/api/v1/users/sign_in" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"email":"nhattan@gmail.com","password":"12345678"}'
+curl -X POST "http://example.com/api/v1/users/sign_in" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"email":"davidblack@gmail.com","password":"12345678"}'
 ```
 
 > Sample response
@@ -200,7 +184,7 @@ curl -X POST "http://example.com/api/v1/users/sign_in" -H 'Content-Type: applica
 {
   "success": 200,
   "data": {
-    "email": "nhattan11@gmail.com",
+    "email": "davidblack@gmail.com",
     "accept_terms": true,
     "authentication_token": "some_token"
   }
@@ -217,7 +201,7 @@ This endpoint signs in a user
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 email | required | |
 password | required | |
 
@@ -228,7 +212,7 @@ password | required | |
 > Sample request
 
 ```shell
-curl -X DELETE "http://example.com/api/v1/users/sign_out" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"auth_token": "some_token"}'
+curl -X POST "http://example.com/api/v1/users/sign_out" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -244,15 +228,14 @@ This endpoint signs out a user
 
 ### HTTP Request
 
-`DELETE http://example.com/api/v1/users/sign_out`
+`POST http://example.com/api/v1/users/sign_out`
 
 ### Query Parameters
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 email | required | |
-auth_token | required | | auth_token received when signing in user
 
 
 
@@ -261,7 +244,7 @@ auth_token | required | | auth_token received when signing in user
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/users/custom_fields" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow'
+curl -X GET "http://example.com/api/v1/users/custom_fields" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof'
 ```
 
 > Sample response
@@ -348,4 +331,4 @@ This endpoint gets all user custom fields
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label

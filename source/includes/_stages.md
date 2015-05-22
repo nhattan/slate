@@ -5,7 +5,7 @@
 > Sample request
 
 ```shell
-curl -X GET "http://example.com/api/v1/stages" -H 'Content-Type: application/json' -H 'Api-Key: meowmeowmeow' -d '{"checklist_id": 1}'
+curl -X GET "http://example.com/api/v1/stages" -H 'Content-Type: application/json' -H 'Api-Key: meowmeow' -H 'Auth-Token: woofwoof' -d '{"checklist_id": 1}'
 ```
 
 > Sample response
@@ -42,5 +42,5 @@ This endpoint gets all available stages for a checklist
 
 Parameter | Required | Default | Description
 --------- | ------- | ------- | -----------
-wl | optional | | If wl is not passed it will automatically set to current white label
+wl | optional | firstcar | White label
 checklist_id | required | |
