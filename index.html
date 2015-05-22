@@ -55,7 +55,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/progress"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/progress"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -93,14 +93,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -109,7 +103,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/addresses"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"postcode": "MK5 8FT"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/addresses"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"postcode": "MK5 8FT"}'</span>
 </code></pre>
 
 <blockquote>
@@ -193,8 +187,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>postcode</td>
@@ -211,7 +205,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/users"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/users"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -220,33 +214,20 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nhattan@gmail.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-21T03:28:46.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-21T08:58:39.636Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accept_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opt_in_retention"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opt_in_acquisition"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tan"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nguyen"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"white_label_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"auto_registered"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"standard_password"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"registration_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"optout"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"legacy_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"marketing_permissions_rev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opt_out_retention"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"photo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01693625484"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MK5 8FT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address 2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my town"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_county"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my county"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"move_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-05-06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_have_you_got_a_garden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_alternative_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David Black"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-05-30"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_rate_us"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_are_you_sure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -270,14 +251,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -286,7 +261,8 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1,"title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"email": "davidblack@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "David", "last_name": "Black", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "my town", "from_county": "my county", "field_have_you_got_a_garden": false, "field_alternative_name": "David", "field_birthdate": "1992-05-30", "field_rate_us": 2,
+"field_are_you_sure": "no"}'</span>
 </code></pre>
 
 <blockquote>
@@ -295,7 +271,7 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nhattan@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"davidblack@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"accept_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -321,8 +297,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>email</td>
@@ -420,6 +396,36 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>field_have_you_got_a_garden</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_alternative_name</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_birthdate</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_rate_us</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_are_you_sure</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
 </tbody></table>
 
 <h2 id="update-user">Update user</h2>
@@ -427,7 +433,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/update"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token", email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": Tran Phu", "from_county": "Ba Dinh"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/update"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"email": "nhattan@gmail.com", "password": "12345678", "password_confirmation": "12345678", "accept_terms": 1, "opt_in_retention": 1, "opt_in_acquisition": 1, "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "1693625484", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "my town", "from_county": "my county"}'</span>
 </code></pre>
 
 <blockquote>
@@ -436,33 +442,20 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nhattan@gmail.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-11T04:01:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-11T06:36:28.608Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accept_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opt_in_retention"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opt_in_acquisition"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tan"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nguyen"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1693625484"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"white_label_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"auto_registered"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"standard_password"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"registration_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"optout"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"legacy_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"marketing_permissions_rev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opt_out_retention"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"photo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01693625484"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MK5 8FT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_address_line_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address 2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my town"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_county"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my county"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"move_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-05-06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_have_you_got_a_garden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_alternative_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David Black"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1992-05-30"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_rate_us"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_are_you_sure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -486,8 +479,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>email</td>
@@ -585,6 +578,36 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>field_have_you_got_a_garden</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_alternative_name</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_birthdate</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_rate_us</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
+<tr>
+<td>field_are_you_sure</td>
+<td>optional</td>
+<td></td>
+<td>custom field</td>
+</tr>
 </tbody></table>
 
 <h2 id="user-sign-in">User sign in</h2>
@@ -592,7 +615,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/sign_in"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email":"nhattan@gmail.com","password":"12345678"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/sign_in"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"email":"davidblack@gmail.com","password":"12345678"}'</span>
 </code></pre>
 
 <blockquote>
@@ -601,7 +624,7 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nhattan11@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"davidblack@gmail.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"accept_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"authentication_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_token"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -627,8 +650,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>email</td>
@@ -649,7 +672,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X DELETE <span class="s2">"http://example.com/api/v1/users/sign_out"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/sign_out"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -665,7 +688,7 @@
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://example.com/api/v1/users/sign_out</code></p>
+<p><code class="prettyprint">POST http://example.com/api/v1/users/sign_out</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -680,20 +703,14 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>email</td>
 <td>required</td>
 <td></td>
 <td></td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
 </tr>
 </tbody></table>
 
@@ -702,7 +719,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/users/custom_fields"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/users/custom_fields"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -798,8 +815,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -810,7 +827,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/password"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"email": "nhattan@gmail.com"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/password"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"email": "davidblack@gmail.com"}'</span>
 </code></pre>
 
 <blockquote>
@@ -841,8 +858,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>email</td>
@@ -857,7 +874,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/password/reset"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"reset_password_token": "some_token", "new_password": "some_password"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/users/password/reset"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"reset_password_token": "some_token", "new_password": "some_password"}'</span>
 </code></pre>
 
 <blockquote>
@@ -888,8 +905,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>reset_password_token</td>
@@ -912,7 +929,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/checklists"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/checklists"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -953,8 +970,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -965,7 +982,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/stages"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"checklist_id": 1}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/stages"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"checklist_id": 1}'</span>
 </code></pre>
 
 <blockquote>
@@ -1012,8 +1029,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>checklist_id</td>
@@ -1030,7 +1047,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/tasks"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/tasks"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -1141,14 +1158,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -1157,7 +1168,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/weeks"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/weeks"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -1277,14 +1288,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -1293,7 +1298,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/tasks/1"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token"}'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/tasks/1"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -1332,14 +1337,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -1348,7 +1347,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/task/1/update"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token", "type": "todo"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/task/1/update"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"type": "todo"}'</span>
 
 </code></pre>
 
@@ -1388,14 +1387,8 @@
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>type</td>
@@ -1410,7 +1403,7 @@
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/task/1/document"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span> -d <span class="s1">'{"auth_token": "some_token", "title": "Mr", "first_name": "Tan", "last_name": "Nguyen", "phone_1": "324234234", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "Tran Phu", "from_county": "Ba Dinh", "provider_name": "Nhat Tan", "provider_postcode": "MK5 8FT", "provider_address_line_1": "provider address 1", "provider_address_line_2": "provider address 2", "provider_town": "provider town", "provider_county": "provider county"}'</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://example.com/api/v1/task/1/document"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span> -d <span class="s1">'{"title": "Mr", "first_name": "David", "last_name": "Black", "phone_1": "324234234", "move_date": "2014/05/06", "from_postcode": "MK5 8FT", "from_address_line_1": "address 1", "from_address_line_2": "address 2", "from_town": "my town", "from_county": "my county", "provider_name": "Provider 1", "provider_postcode": "MK5 8FT", "provider_address_line_1": "provider address 1", "provider_address_line_2": "provider address 2", "provider_town": "provider town", "provider_county": "provider county"}'</span>
 
 </code></pre>
 
@@ -1440,14 +1433,8 @@ Content-type: application/pdf
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 <tr>
 <td>title</td>
@@ -1554,7 +1541,7 @@ Content-type: application/pdf
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/instructors/tran-thanh"</span>-H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/instructors/tran-thanh"</span>-H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -1689,8 +1676,8 @@ Content-type: application/pdf
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -1836,7 +1823,7 @@ Content-type: application/pdf
 <blockquote>
 <p>Sample request</p>
 </blockquote>
-<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/car_types"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeowmeow'</span>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"http://example.com/api/v1/car_types"</span> -H <span class="s1">'Content-Type: application/json'</span> -H <span class="s1">'Api-Key: meowmeow'</span> -H <span class="s1">'Auth-Token: woofwoof'</span>
 </code></pre>
 
 <blockquote>
@@ -1882,14 +1869,8 @@ Content-type: application/pdf
 <tr>
 <td>wl</td>
 <td>optional</td>
-<td></td>
-<td>If wl is not passed it will automatically set to current white label</td>
-</tr>
-<tr>
-<td>auth_token</td>
-<td>required</td>
-<td></td>
-<td>auth_token received when signing in user</td>
+<td>firstcar</td>
+<td>White label</td>
 </tr>
 </tbody></table>
 
@@ -1904,6 +1885,10 @@ Content-type: application/pdf
 </tr>
 </thead><tbody>
 <tr>
+<td>400</td>
+<td>bad_request &ndash; Missing or invalid parameter</td>
+</tr>
+<tr>
 <td>401</td>
 <td>unauthorized &ndash; Wrong api key or authentication token or password</td>
 </tr>
@@ -1917,15 +1902,19 @@ Content-type: application/pdf
 </tr>
 <tr>
 <td>600</td>
-<td>missing_parameter &ndash; Missing required parameter</td>
-</tr>
-<tr>
-<td>601</td>
 <td>create_failed &ndash; Can not create resource</td>
 </tr>
 <tr>
-<td>602</td>
+<td>601</td>
 <td>update_failed &ndash; Can not update the specified resource</td>
+</tr>
+<tr>
+<td>602</td>
+<td>task_not_found &ndash; Can not found the task</td>
+</tr>
+<tr>
+<td>603</td>
+<td>checklist_not_found &ndash; Can not found the checklist</td>
 </tr>
 </tbody></table>
 
