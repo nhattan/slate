@@ -17,6 +17,7 @@ includes:
   - tasks
   - instructors
   - car_types
+  - devices
   - errors
 
 search: true
